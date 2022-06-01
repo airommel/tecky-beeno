@@ -1,0 +1,28 @@
+user
+----
+id pk
+username varchar(32)
+password_hash char(60)
+level_id fk >- user_level.id
+
+
+user_level
+----------
+id pk
+name varchar(16)
+
+
+file
+----
+id pk
+name varchar(260)
+content text
+is_file boolean
+category_id fk >- category.id
+owner_id fk >- user.id
+
+
+category
+--------
+id pk
+name varchar(16)

@@ -1,0 +1,11 @@
+log
+---
+id pk
+method string(6)
+url string(2048)
+user_agent string(256) null
+
+image
+-----
+id pk
+filename string(256)

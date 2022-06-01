@@ -1,0 +1,9 @@
+.container {
+  padding: 1rem;
+  display: flex;
+}
+
+.container > * {
+  flex-grow: 1;
+  max-width: 50vw;
+}

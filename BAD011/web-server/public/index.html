@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        margin-bottom: 0.85em;
+      }
+      .timestamp {
+        color: grey;
+      }
+      .user-agent {
+        color: darkorange;
+      }
+      .d-flex {
+        display: flex;
+        align-items: flex-start;
+      }
+      table {
+        border: 1px solid black;
+        margin: 0.5em;
+        border-collapse: collapse;
+      }
+      tr {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>demo api: GET /users <a href="/users">link</a></p>
+    <p>demo api: GET /users/:id <a href="/users/1">link</a></p>
+    <div class="d-flex">
+      <ol id="recent-log-list">
+        <li>
+          <span class="method">GET</span>
+          <span class="url">/index.html</span>
+          <br />
+          <span class="timestamp">2022-01-16 14:45</span>
+          <br />
+          <span class="user-agent">Firefox</span>
+        </li>
+      </ol>
+      <table id="url-list">
+        <thead>
+          <tr>
+            <th>count</th>
+            <th>url</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="count">1445</td>
+            <td class="url">/index.html</td>
+          </tr>
+        </tbody>
+      </table>
+      <table id="user_agent-list">
+        <thead>
+          <tr>
+            <th>count</th>
+            <th>user agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="count">1445</td>
+            <td class="user-agent">Firefox</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      let recentLogList = document.querySelector('#recent-log-list')
+      let recentLogItemTemplate = recentLogList.querySelector('li')
+      recentLogItemTemplate.remove()
+
+      let urlList = document.querySelector('#url-list tbody')
+      let urlItemTemplate = urlList.querySelector('tr')
+      urlItemTemplate.remove()
+
+      let userAgentList = document.querySelector('#user_agent-list tbody')
+      let userAgentItemTemplate = userAgentList.querySelector('tr')
+      userAgentItemTemplate.remove()
+
+      async function loadRecentLogs() {
+        let res = await fetch('/logs/recent')
+        let json = await res.json()
+        for (let log of json.log_list) {
+          let logItem = recentLogItemTemplate.cloneNode(true)
+          logItem.dataset.id = log.id
+          logItem.querySelector('.method').textContent = log.method
+          logItem.querySelector('.url').textContent = log.url
+          logItem.querySelector('.timestamp').textContent = new Date(
+            log.timestamp,
+          ).toLocaleString()
+          logItem.querySelector('.user-agent').textContent = log.user_agent
+          recentLogList.appendChild(logItem)
+        }
+      }
+      loadRecentLogs()
+
+      async function loadStats() {
+        let res = await fetch('/logs/stats')
+        let json = await res.json()
+        for (let row of json.url_stats) {
+          let item = urlItemTemplate.cloneNode(true)
+          item.querySelector('.count').textContent = row.count
+          item.querySelector('.url').textContent = row.url
+          urlList.appendChild(item)
+        }
+        for (let row of json.user_agent_stats) {
+          let item = userAgentItemTemplate.cloneNode(true)
+          item.querySelector('.count').textContent = row.count
+          item.querySelector('.user-agent').textContent = row.user_agent
+          userAgentList.appendChild(item)
+        }
+      }
+      loadStats()
+    </script>
+  </body>
+</html>

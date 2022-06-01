@@ -1,0 +1,63 @@
+:root {
+  --bs-primary-rgb: 255, 204, 0;
+}
+
+.social-icon {
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin: 0 0.25em;
+}
+
+nav li {
+  text-transform: uppercase;
+}
+
+.nav-item {
+  padding: 1em;
+  font-size: smaller;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+.text-white .nav-link {
+  color: white !important;
+}
+
+.carousel-caption {
+  font-size: 36px;
+  color: white;
+  font-family: "League Gothic";
+  font-weight: normal;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  display: flex;
+}
+.carousel-caption > div {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px 25px 25px 25px;
+  margin: auto;
+}
+
+@font-face {
+  font-family: "League Gothic";
+  src: url(https://www.cssigniter.com/vip/acoustic/wp-content/themes/acoustic/fonts/leaguegothic-regular-webfont.eot);
+  src: url("https://www.cssigniter.com/vip/acoustic/wp-content/themes/acoustic/fonts/leaguegothic-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url(https://www.cssigniter.com/vip/acoustic/wp-content/themes/acoustic/fonts/leaguegothic-regular-webfont.woff)
+      format("woff"),
+    url(https://www.cssigniter.com/vip/acoustic/wp-content/themes/acoustic/fonts/leaguegothic-regular-webfont.ttf)
+      format("truetype"),
+    url("https://www.cssigniter.com/vip/acoustic/wp-content/themes/acoustic/fonts/leaguegothic-regular-webfont.svg#league_gothicregular")
+      format("svg");
+  font-weight: 600;
+  font-style: normal;
+}

@@ -1,0 +1,35 @@
+exam
+-
+id pk
+term_id fk >- exam_term.id
+year
+site_id fk >- site.id
+remark json // this is bad
+
+site
+-
+id pk
+name text
+country_id fk >- country.id
+
+country
+-
+id pk
+name text
+
+exam_term
+-
+id pk
+name text
+
+
+exam_participant
+-
+exam_id fk >- exam.id
+student_id fk >- student.id
+score
+
+student
+-
+id pk
+name text

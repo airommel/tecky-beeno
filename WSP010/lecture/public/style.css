@@ -1,0 +1,12 @@
+.teacher {
+  background-color: skyblue;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 1em;
+}
+.subject {
+  background-color: orangered;
+  padding: 1em;
+  border-radius: 1em;
+  display: inline-block;
+}

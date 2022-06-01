@@ -1,0 +1,13 @@
+.Var {
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 1px solid black;
+}
+.title {
+  color: var(--text-color, darkgreen);
+}
+.content {
+  background-color: rgb(20, 20, 20);
+  padding: 0.5em;
+  color: white;
+}

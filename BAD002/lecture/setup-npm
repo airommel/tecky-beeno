@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+set -o pipefail
+set -x
+
+## git
+echo node_modules >> .gitignore
+echo package-lock.json >> .gitignore
+echo pnpm-lock.yaml >> .gitignore
+echo yarn.lock >> .gitignore
+
+## npm package
+npm init --yes
+
+## typescript
+npm i -D ts-node ts-node-dev typescript @types/node
+cp ../../BAD001/lecture/tsconfig.json .
+
+## jest
+npm i -D jest @types/jest ts-jest
+npx ts-jest config:init
+npm set-script test "jest"
+npm set-script test:watch "jest --watch"
+
+## express
+npm i express
+npm i -D @types/express

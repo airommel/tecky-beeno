@@ -1,0 +1,5 @@
+{
+	"devDependencies": {
+		"forever": "^4.0.2"
+	}
+}

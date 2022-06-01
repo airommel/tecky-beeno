@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        display: none;
+      }
+      section.show {
+        display: block;
+      }
+      i.emoji {
+        font-style: normal;
+      }
+      .space {
+        width: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button onclick="showSection('s1')">s1</button>
+      <button onclick="showSection('s2')">s2</button>
+    </nav>
+    <section id="s1">s1</section>
+    <section id="s2">s2</section>
+
+    <nav>
+      <button onclick="showPage('page1.html')">page 1</button>
+      <button onclick="showPage('page2.html')">page 2</button>
+    </nav>
+    <main id="page-container"></main>
+    <div>a b</div>
+    <div style="display: flex">
+      <i class="emoji">🔮</i>
+      <div class="space"></div>
+      b
+    </div>
+    <script>
+      function showSection(id) {
+        let sections = document.querySelectorAll('section')
+        for (let section of sections) {
+          // section.style.display = 'none'
+          section.classList.remove('show')
+        }
+        let section = document.getElementById(id)
+        // section.style.display = 'block'
+        section.classList.add('show')
+      }
+      function showPage(page) {
+        let container = document.getElementById('page-container')
+        container.innerHTML = 'loading ' + page + ' ...'
+        fetch(page).then(res =>
+          res.text().then(html => (container.innerHTML = html)),
+        )
+      }
+    </script>
+  </body>
+</html>

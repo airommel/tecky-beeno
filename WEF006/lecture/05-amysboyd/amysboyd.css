@@ -1,0 +1,31 @@
+#textOutput {
+  font-size: 2.5em;
+  height: 1em;
+  margin: 1em 0;
+}
+.cursor {
+  background-color: black;
+  width: 5px;
+  height: 100%;
+  display: none;
+}
+.cursor.active {
+  display: inline-block;
+  color: transparent;
+}
+
+#keywords {
+  font-size: 2.5em;
+}
+#keywords a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+#keywords a.yellow:hover {
+  color: rgb(151, 151, 6);
+}
+#keywords a.pink:hover {
+  color: pink;
+}

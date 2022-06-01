@@ -1,0 +1,35 @@
+ teacher id, teacher name
+ 1, alice
+ 2, alex
+ 3, alexenda
+
+ teacher id, teacher subject id, teaching since
+ 1, 1, 2021/02/03
+ 2, 2, 2021/02/04
+ 3, 3, 2021/02/05
+ 2, 4, 2021/02/06
+ 1, 5, 2021/02/07
+
+ student id, student name
+ 1, bob
+ 2, charlie
+ 3, dave
+ 4, eve
+ 5, frank
+
+ student name, student subject id
+ 1, 1
+ 2, 1
+ 3, 1
+ 4, 2
+ 5, 2
+
+ subject id, subject name
+ 1, coding
+ 2, coding
+ 3, coding 1
+ 4, coding 2
+
+ user_id, username
+
+ message_id, sender_id, receiver_id

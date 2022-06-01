@@ -1,0 +1,128 @@
+.row {
+  display: flex;
+}
+
+.col {
+  background-color: #dae8fc;
+  outline: 1px solid #6c8ebf;
+  width: 80px;
+  height: 80px;
+  margin: 6px;
+  /* margin: auto; */
+
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #dee0e4;
+  border-radius: 9px;
+}
+
+.restart-button {
+  color: #1bbcab;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: arial;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.gray {
+  color: #747474;
+}
+
+.blue {
+  color: #4686f2;
+}
+
+.share-button {
+  flex-grow: 1;
+  text-align: end;
+}
+
+.card-inner-padding-top {
+  padding-top: 1em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.card-inner-padding-middle {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.difficulty-level {
+  padding: 0 1em;
+  font-weight: bold;
+}
+
+.current-turn {
+  align-items: center;
+}
+
+i.bi-x {
+  font-size: 1.5em;
+  line-height: 1em;
+}
+i.bi-circle {
+  font-size: 0.8em;
+  line-height: 1em;
+  font-weight: bold;
+}
+
+.scores .score {
+  font-weight: bold;
+}
+.score-bar {
+  width: 18em;
+  border-bottom: 2px solid #1bbcab;
+  box-shadow: 0 4px 3px #cfc4c4;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  margin: 0 6px;
+}
+
+.game-board-container {
+  background-color: #1bbcab;
+  padding: 1em;
+}
+
+.game-board {
+  background-color: #15a091;
+  width: calc(80px * 3 + 10px * 2);
+  height: calc(80px * 3 + 10px * 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-board-container .row {
+  justify-content: space-between;
+}
+.game-board-container .col {
+  background-color: #1bbcab;
+  outline: none;
+  margin: 0;
+}
+.game-board .chess {
+  font-size: 3.5em;
+}
+
+.game-board .x-player {
+  color: #555;
+}
+.game-board .o-player {
+  color: #f2ead2;
+}

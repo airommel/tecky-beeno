@@ -1,0 +1,37 @@
+# Visualize on https://erd.surge.sh
+# or https://quick-erd.surge.sh
+#
+# Relationship Types
+#  -    - one to one
+#  -<   - one to many
+#  >-   - many to one
+#  >-<  - many to many
+#  -0   - one to zero or one
+#  0-   - zero or one to one
+#  0-0  - zero or one to zero or one
+#  -0<  - one to zero or many
+#  >0-  - zero or many to one
+#
+////////////////////////////////////
+
+
+user
+----
+id integer PK
+username string(256)
+password_hash string(60)
+
+
+room
+----
+id integer PK
+name string(256)
+creator_id integer FK >- user.id
+
+
+message
+-------
+id integer PK
+room_id integer FK >- room.id
+content text
+sender_id integer FK >- user.id

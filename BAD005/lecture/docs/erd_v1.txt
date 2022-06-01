@@ -1,0 +1,32 @@
+# Visualize on https://erd.surge.sh
+# or https://quick-erd.surge.sh
+#
+# Relationship Types
+#  -    - one to one
+#  -<   - one to many
+#  >-   - many to one
+#  >-<  - many to many
+#  -0   - one to zero or one
+#  0-   - zero or one to one
+#  0-0  - zero or one to zero or one
+#  -0<  - one to zero or many
+#  >0-  - zero or many to one
+#
+////////////////////////////////////
+
+
+teacher
+-------
+id integer PK
+created_at timestamp
+updated_at timestamp
+name string NULL
+
+
+student
+-------
+id integer PK
+teacher_id integer NULL FK >- teacher.id
+created_at timestamp
+updated_at timestamp
+name string NULL

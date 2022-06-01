@@ -1,0 +1,7 @@
+{
+  "name": "clock-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

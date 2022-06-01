@@ -1,0 +1,24 @@
+body {
+  overflow-x: hidden;
+}
+main {
+  display: none;
+}
+main.ready {
+  display: block;
+}
+canvas {
+  cursor: none;
+}
+#cursor {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+}
+.space {
+  display: inline-block;
+}
+#patternText {
+  font-family: monospace;
+  line-height: 1em;
+}

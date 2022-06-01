@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life.io</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Life.io</h1>
+    <main>
+      <div class="world-container">
+        <h2>World</h2>
+        <div class="world">
+          <div class="row">
+            <div class="col cell">
+              <div class="life">
+                <div class="username">{username}</div>
+                <div class="score">{score}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="score-board-container">
+        <h2>Score Board</h2>
+        <div class="score-board">
+          <div class="score-item">
+            <div class="info">
+              <div class="username">{username}</div>
+              <div class="score">{score}</div>
+            </div>
+            <div class="preview">
+              <div class="life">
+                <div class="username">{username}</div>
+                <div class="score">{score}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/client.js"></script>
+  </body>
+</html>

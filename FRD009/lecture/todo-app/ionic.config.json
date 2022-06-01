@@ -1,0 +1,7 @@
+{
+  "name": "step-by-step-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

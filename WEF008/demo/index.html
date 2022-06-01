@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Game of Life</title>
+  </head>
+  <body>
+    <main>
+      <div id="canvas"></div>
+      <img id="cursor" src="cursor.png" alt="" />
+      <div class="row">
+        <div class="col">
+          <div class="mx-4">
+            <button class="btn btn-primary" onclick="loop()">Resume</button>
+            <div class="space me-3"></div>
+            <button class="btn btn-primary" onclick="penMode='life'">
+              Draw Life
+            </button>
+            <button class="btn btn-primary" onclick="penMode='wall'">
+              Draw Wall
+            </button>
+          </div>
+          <div class="mx-4 mt-2">
+            <button class="btn btn-danger" onclick="boxColor=fire">火</button>
+            <button class="btn btn-warning" onclick="boxColor=earth">土</button>
+            <button class="btn btn-dark" onclick="boxColor=metal">金</button>
+            <button class="btn btn-primary" onclick="boxColor=water">水</button>
+            <button class="btn btn-success" onclick="boxColor=wood">木</button>
+          </div>
+          <div class="mx-4 mt-2">
+            <button class="btn btn-primary" onclick="toDot()">Dot</button>
+            <button class="btn btn-primary" onclick="toCross()">Cross</button>
+            <button class="btn btn-primary" onclick="toT()">T</button>
+            <button class="btn btn-primary" onclick="toE()">E</button>
+            <div class="space me-3"></div>
+            <button class="my-2 btn btn-primary" onclick="toCustomPen()">
+              Custom Pattern
+            </button>
+            <div class="space me-3"></div>
+            <input type="number" style="width: 5em" id="penWInput" onchange="updatePenW()">
+          </div>
+        </div>
+        <div class="col text-center pb-3">
+          <textarea id="patternText" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

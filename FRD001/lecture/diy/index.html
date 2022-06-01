@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA DIY</title>
+  </head>
+  <body>
+    <main id="root">root here</main>
+    <script>
+      let state = {
+        count: 0,
+        name: '',
+        range: 0,
+      }
+      function inc() {
+        state.count++
+        update()
+      }
+      function setName(event) {
+        state.name = event.target.value
+        update()
+      }
+      function setRange(event) {
+        state.range = event.target.value
+				update()
+      }
+      function render(state) {
+        return /* html */ `
+      	  <div class="counter">
+      			value: ${state.count}
+      			<button onclick="inc()">+1</button>
+						<div>
+							<input type='text' onchange="setName(event)" value="${state.name}">
+							<input type='range' min="0" max="100" value="${state.range}" onchange="setRange(event)">
+						</div>
+						<p>
+							Hi, ${state.name} (${state.range})
+						</p>
+						<p>
+							Welcome back, ${state.name}
+						</p>
+      		</div>
+      	`
+      }
+      function update() {
+        let root = document.querySelector('#root')
+        root.innerHTML = render(state)
+      }
+      update()
+    </script>
+  </body>
+</html>

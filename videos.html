@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+let files = [
+  {
+    "hash": "QmUVuqoTNASSDwCRG5ceAsmhb9XqQBWwAP5BkZX6Nw7w8N",
+    "filename": "209 - FRD004 Lecture - Globally Shared State without Redux.mp4"
+  },
+  {
+    "hash": "QmWfrrxNxJwihcHse63wxQAMwR15jtRBWmJzi7Vmii2ACR",
+    "filename": "210 - FRD004 Lecture - Global State with Redux.mp4"
+  },
+  {
+    "hash": "Qmdj1Hnfav2fwaWoFmFYosn5Xk1xeeLewALW3HSpWNzycc",
+    "filename": "211 - FRD004 Review - React Redux Todo App (Native).mp4"
+  },
+  {
+    "hash": "QmWeGPio2naL7gx5R3MPfqUFkWxMTU1iYwvkuvLooTgcGL",
+    "filename": "212 - FRD005 Lecture - Redux Data Flow.mp4"
+  },
+  {
+    "hash": "QmREKxFwKEbzgV65h1ZFCnLDjbt3fhJuKtSN4feahM5AU2",
+    "filename": "213 - FRD005 Lecture - Redux Multi-State Structure.mp4"
+  },
+  {
+    "hash": "QmXQBV6xX5ywDAWPn9yqfttnR8VRNPJCUCHwkCaqhG4dwN",
+    "filename": "214 - FRD005 Review - Update Todo List with Redux.mp4"
+  },
+  {
+    "hash": "QmSSvUkZu7jji2xuAyYGtasEjTo9uspW75xREicewhSanr",
+    "filename": "215 - FRD005 Bonus - Reorder List Item.mp4"
+  }
+]
+let ipfsOrigin = 'http://localhost:8080/ipfs'
+function fallback() {
+	ipfsOrigin = 'https://ipfs.io/ipfs'
+}
+function makeList() {
+	for (let file of files) {
+		let p = document.createElement('p')
+		let a = document.createElement('a')
+		a.textContent = file.filename
+		a.href = ipfsOrigin + '/' + file.hash
+		a.target = '_blank'
+		p.appendChild(a)
+		document.body.appendChild(p)
+	}
+}
+fetch(origin+'/test').catch(fallback).then(makeList)
+</script>
+</body>
+</html>

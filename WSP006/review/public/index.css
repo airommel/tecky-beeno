@@ -1,0 +1,64 @@
+.slogun {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.slogun .word {
+  display: inline-block;
+  background-color: white;
+  margin: 0.1em;
+  font-size: 2em;
+  padding: 0.1em;
+}
+
+.input-container {
+  background-color: darkred;
+  margin: 1.25em;
+}
+.input-container input[type="file"] {
+  color: white;
+}
+.input-container .title {
+  color: rgb(255, 29, 29);
+  font-weight: bold;
+}
+
+.input-container input[type="submit"].form-control {
+  width: 4em;
+}
+.input-container a {
+  color: lightblue;
+}
+
+.memo {
+  background-color: #f5e37b;
+  width: 10em;
+  height: 10em;
+  position: relative;
+  margin: 1.25em;
+  margin-bottom: 2em;
+  display: inline-block;
+  box-shadow: 8px 8px 4px rgb(32, 30, 30);
+}
+
+button.icon {
+  border-radius: 100%;
+  width: 2.5em;
+  height: 2.5em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  box-shadow: 0px 0px 4px black;
+  position: absolute;
+}
+
+button.delete {
+  top: -1.25em;
+  right: -1.25em;
+}
+
+button.edit {
+  bottom: -1.25em;
+  right: -1.25em;
+}

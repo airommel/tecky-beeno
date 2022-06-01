@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .col {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+      }
+      .row {
+        display: flex;
+      }
+      .chess {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border-radius: 100%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <div class="board"></div>
+    <script>
+      class Board {
+        constructor(selector, monsterList) {
+          let board = document.querySelector(selector)
+          let html = '<div class="chess"></div>'
+          for (let i = 0; i < 6; i++) {
+            html += `
+			<div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+`
+          }
+          board.innerHTML = html
+          let chess = document.querySelector('.chess')
+          let colList = document.querySelectorAll('.col')
+          for (let col of colList) {
+            col.addEventListener('click', () => {
+              console.log('move', chess, 'to', col)
+              let rect = col.getBoundingClientRect()
+              console.log(rect)
+              // chess.style.top = rect.top + 'px'
+              // chess.style.left = rect.left + 'px'
+              $(chess).animate({
+                top: rect.top,
+                left: rect.left,
+              })
+            })
+          }
+        }
+      }
+      let board = new Board('.board', 3)
+    </script>
+  </body>
+</html>

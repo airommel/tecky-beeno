@@ -1,0 +1,7 @@
+docker.env
+dist/
+pgdata/
+/image
+/image.gz
+/image.zst
+aws.env

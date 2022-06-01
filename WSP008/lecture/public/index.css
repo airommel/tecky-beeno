@@ -1,0 +1,11 @@
+form label {
+  display: block;
+  margin-top: 1em;
+}
+form label::after {
+  content: ":";
+}
+
+.mt-3{
+	margin-top: 1em;
+}

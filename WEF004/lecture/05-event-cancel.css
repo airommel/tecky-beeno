@@ -1,0 +1,17 @@
+.card {
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 0.5em;
+  background-color: lightblue;
+}
+
+.card .content {
+  display: none;
+}
+
+.card .content.show {
+  display: block;
+  background-color: wheat;
+  padding: 1em;
+}

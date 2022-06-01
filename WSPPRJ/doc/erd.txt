@@ -1,0 +1,61 @@
+# https://erd.surge.sh
+#
+# Relationship Types
+#  -    - one to one
+#  -<   - one to many
+#  >-   - many to one
+#  >-<  - many to many
+#  -0   - one to zero or one
+#  0-   - zero or one to one
+#  0-0  - zero or one to zero or one
+#  -0<  - one to zero or many
+#  >0-  - zero or many to one
+#
+////////////////////////////////////
+
+event
+-----
+id pk
+title varchar(256)
+created_by fk >0- user.id
+
+user
+----
+id pk
+name varchar(256)
+
+event_participant
+-----------------
+event_id fk >0- event.id
+user_id fk >0- user.id
+
+date_option
+------------
+event_id fk >- event.id
+id pk
+date Date
+
+user_date_vote
+-
+user_id fk >0- user.id
+date_option_id fk >0- date_option.id
+
+venue_option
+------------
+id pk
+venue_id fk >0- venue.id
+event_id fk >- event.id
+
+user_venue_vote
+---------------
+venue_option_id fk >0- venue_option.id
+user_id fk >0- user.id
+
+venue
+-----
+id pk
+name varchar(256)
+
+
+
+

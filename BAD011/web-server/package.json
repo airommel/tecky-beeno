@@ -1,0 +1,35 @@
+{
+  "name": "lecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand --forceExit",
+    "build": "tsc -p .",
+    "update-db": "knex migrate:latest && knex seed:run",
+    "start:prod": "./scripts/run-in-background.sh",
+    "start": "ts-node-dev server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.1.0",
+    "express": "^4.17.2",
+    "knex": "^1.0.1",
+    "listening-on": "^2.0.2",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@types/node": "^17.0.8",
+    "gen-env": "^0.2.0",
+    "jest": "^27.4.7",
+    "quick-erd": "^1.0.6",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
+  }
+}

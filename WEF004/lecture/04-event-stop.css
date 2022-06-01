@@ -1,0 +1,9 @@
+img.thumbnail {
+  max-width: 32px;
+  transition: max-width 1s;
+}
+
+img.thumbnail.enlarge {
+  /* width: unset; */
+  max-width: 1000px;
+}

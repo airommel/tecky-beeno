@@ -1,0 +1,109 @@
+.banner-img {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity transform;
+  transition-duration: 5s;
+  transform: scale(1.25);
+  z-index: -1;
+}
+
+.banner-img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.banner-img.fade {
+  opacity: 0;
+  transform: scale(1);
+}
+
+header {
+  padding: 3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2em;
+  margin: 0 1em;
+}
+
+nav {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3em;
+  animation: hide-nav 1s;
+  color: white;
+}
+nav.show {
+  animation: show-nav 1s;
+}
+nav #hideNavButton {
+  animation: undo-rotate-hide-button 0.5s;
+}
+nav.show #hideNavButton {
+  animation: rotate-hide-button 0.5s;
+}
+@keyframes undo-rotate-hide-button {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-hide-button {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes show-nav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hide-nav {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+nav .buttons {
+  display: flex;
+  justify-content: end;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+nav a:hover {
+  color: white;
+}
+
+nav a,
+h2 {
+  padding: 0.5em 0;
+}

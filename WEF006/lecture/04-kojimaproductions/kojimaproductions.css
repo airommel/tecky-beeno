@@ -1,0 +1,89 @@
+body {
+  background-color: black;
+  color: white;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.logo span {
+  text-transform: uppercase;
+}
+.logo .bar {
+  display: inline-block;
+  background-color: white;
+  width: 4px;
+  height: 1em;
+  transform: skew(-15deg, 20deg);
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-duration: 0.3s;
+}
+
+.logo .bar:nth-child(1) {
+  background-color: red;
+  animation-name: blink-1;
+}
+.logo .bar:nth-child(2) {
+  background-color: orange;
+  animation-name: blink-2;
+}
+.logo .bar:nth-child(3) {
+  background-color: yellow;
+  animation-name: blink-3;
+}
+.logo .bar:nth-child(4) {
+  background-color: green;
+  animation-name: blink-4;
+}
+.logo .bar:nth-child(5) {
+  background-color: cyan;
+  animation-name: blink-5;
+}
+
+@keyframes blink-1 {
+  0% {
+    opacity: 0;
+  }
+  20%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink-2 {
+  0% {
+    opacity: 0;
+  }
+  40%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink-3 {
+  0% {
+    opacity: 0;
+  }
+  60%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink-4 {
+  0% {
+    opacity: 0;
+  }
+  80%,
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink-5 {
+  0% {
+    opacity: 0;
+  }
+  100%,
+  100% {
+    opacity: 1;
+  }
+}

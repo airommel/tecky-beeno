@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main::before {
+        content: '<';
+      }
+      main::after {
+        content: '>';
+      }
+      .fa {
+        font-style: normal;
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        overflow: hidden;
+      }
+      .fa.fa-check::before {
+        content: '🔮';
+      }
+
+      /* desktop device */
+
+      table {
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        margin-top: -1px;
+        margin-left: -1px;
+        margin-bottom: 0;
+        margin-right: 0;
+        padding: 1em;
+      }
+      tr {
+        /* background-color: red; */
+      }
+      td::before {
+        display: none;
+      }
+
+      /* mobile device */
+      @media (max-width: 414px) {
+        thead {
+          display: none;
+        }
+        tr {
+          /* background-color: green; */
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 2em;
+        }
+        tr:nth-child(1) {
+          margin-top: 0;
+        }
+        td {
+          position: relative;
+          padding-top: 1.5em;
+          min-width: 51vh;
+        }
+        td::before {
+          display: block;
+          content: 'some label';
+          background-color: lightgray;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>123</main>
+    <button>
+      <i class="fa fa-check">checkbox</i>
+      confirm
+    </button>
+    <div id="data-output"></div>
+  </body>
+  <script>
+    function toTextContent(string) {
+      // let span = document.createElement('span')
+      // span.textContent = string
+      // return span.innerHTML
+      string = String(string)
+      return string.replace(/</g, '').replace(/>/g, '')
+			// .replace(/\//g, '')
+    }
+    function toTableHTML(array) {
+      if (array.length == 0) {
+        return 'no data'
+      }
+
+      let style = ''
+      let table = ''
+
+      table += '<table>'
+
+      /* table head */
+      table += '<thead><tr>'
+      let item = array[0]
+      let i = 0
+      for (let key in item) {
+        i++
+        key = toTextContent(key)
+        table += '<th>' + key + '</th>'
+        style += `td:nth-of-type(${i}):before{content:'${key}'}`
+      }
+      table += '</tr></thead>'
+
+      /* table body */
+      table += '<tbody>'
+      for (let item of array) {
+        table += '<tr>'
+        for (let key in item) {
+          let value = toTextContent(item[key])
+          table += '<td>' + value + '</td>'
+        }
+        table += '</tr>'
+      }
+      table += '</tbody>'
+
+      table += '</table>'
+
+      return `<style>${style}</style>${table}`
+    }
+
+    let foods = [
+      {
+        'Type of Food': 'Slice of Pizza',
+        Calories: 450,
+        'Tasty Factor': '95%',
+        'Average Price': '$5.00',
+        Rarity: 'Common',
+        'Average Rating': '8/10',
+      },
+      {
+        'Type of Food': 'Slice of Pizza',
+        Calories: 350,
+        'Tasty Factor': '87%',
+        'Average Price': '$3.50',
+        Rarity: '<b>o</b>',
+        'Average Rating': '7.5/10',
+      },
+    ]
+    document.querySelector('#data-output').innerHTML = toTableHTML(foods)
+  </script>
+</html>

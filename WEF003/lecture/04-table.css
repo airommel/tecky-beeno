@@ -1,0 +1,19 @@
+table.center td {
+  text-align: center;
+}
+
+table.left td {
+  text-align: left;
+}
+
+table.right td {
+  text-align: right;
+}
+
+table.start td {
+  text-align: start;
+}
+
+table.end td {
+  text-align: end;
+}

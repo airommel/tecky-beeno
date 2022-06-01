@@ -1,0 +1,22 @@
+{
+  "name": "FRD001",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest test/*.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^26.0.19",
+    "jest": "^26.6.3",
+    "puppeteer": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/puppeteer": "^5.4.2",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.3"
+  }
+}

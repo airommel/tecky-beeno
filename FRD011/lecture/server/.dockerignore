@@ -1,0 +1,7 @@
+Dockerfile
+.env
+scripts/
+.dockerignore
+node_modules/
+pnpm-lock.yaml
+dist/

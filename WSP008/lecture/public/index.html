@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <button class="inc">Loading count...</button>
+    <div id="clock">Loading clock...</div>
+
+    <p>Number of users: <span id="user-count">Loading...</span></p>
+
+    <form
+      id="signup-form"
+      method="post"
+      action="/user"
+      enctype="multipart/form-data"
+    >
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" />
+
+      <label for="photo">Profile Picture</label>
+      <input type="file" name="photo" id="photo" accept="image/jpeg" />
+
+      <div class="mt-3">
+        <input type="submit" value="Sign Up" />
+      </div>
+
+      <p class="output-message"></p>
+    </form>
+
+    <script src="index.js"></script>
+  </body>
+</html>

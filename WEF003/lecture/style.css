@@ -1,0 +1,22 @@
+p {
+  color: darkgreen;
+}
+
+body {
+  /* color: red; */
+}
+span.red {
+  color: red;
+}
+span.green {
+  color: green;
+}
+span.blue {
+  color: blue;
+}
+.big-text {
+  font-size: x-large;
+}
+iframe {
+  border: none;
+}

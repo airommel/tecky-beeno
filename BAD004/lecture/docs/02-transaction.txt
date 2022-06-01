@@ -1,0 +1,50 @@
+
+1. await select price (where id = ?)
+2. if price < bid
+3. then await update price = bid
+4. else reject
+
+T0 price = 10
+T1 alice req bid 12
+T2 bob req bid 11
+T3 (A) await if price < 12
+T4 (B) await if price < 11
+T5 (A) true: price is 10, < 12
+T6 (A) await update price = 12
+T7 (B) true: price is 10, < 11
+T8 (B) await update price = 11
+
+
+sql: BEGIN;
+sql: select price from item where id = 1;
+
+ts: if price < $bid
+sql: update item set price = $bid and id = 1;
+sql: COMMIT;
+ts: res.json({ok:true})
+
+ts: else
+sql: ROLLBACK;
+ts: res.json({error:'bid is lower than price'})
+
+
+
+-----------
+
+sql: update user set score = 10
+
+
+txn2: BEGIN;
+txn2: select score from user (see 10)
+txn2: update user set score = 20
+txn2: select score from user (should see 20)
+
+txn3: BEGIN;
+txn3: select score from user (see 10)
+txn3: update user set score = 30
+txn3: select score from user (should see 30)
+
+txn2: select score from user (should see 20)
+txn2: commit
+
+txn3: commit (reject)

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      li {
+        margin-bottom: 0.85em;
+      }
+      .timestamp {
+        color: grey;
+      }
+      .user-agent {
+        color: darkorange;
+      }
+    </style>
+  </head>
+  <body>
+    <p>demo api: GET /users <a href="/users">link</a></p>
+    <p>demo api: GET /users/:id <a href="/users/1">link</a></p>
+    <ol id="recent-log-list">
+      <li>
+        <span class="method">GET</span>
+        <span class="url">/index.html</span>
+        <br />
+        <span class="timestamp">2022-01-16 14:45</span>
+        <br />
+        <span class="user-agent">Firefox</span>
+      </li>
+    </ol>
+    <script>
+      let recentLogList = document.querySelector('#recent-log-list')
+      let logTemplate = recentLogList.querySelector('li')
+      logTemplate.remove()
+      async function loadRecentLogs() {
+        let res = await fetch('/logs/recent')
+        let json = await res.json()
+        for (let log of json.log_list) {
+          let logItem = logTemplate.cloneNode(true)
+          logItem.dataset.id = log.id
+          logItem.querySelector('.method').textContent = log.method
+          logItem.querySelector('.url').textContent = log.url
+          logItem.querySelector('.timestamp').textContent = new Date(
+            log.timestamp,
+          ).toLocaleString()
+          logItem.querySelector('.user-agent').textContent = log.user_agent
+          recentLogList.appendChild(logItem)
+        }
+      }
+      loadRecentLogs()
+    </script>
+  </body>
+</html>

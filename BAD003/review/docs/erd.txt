@@ -1,0 +1,46 @@
+# Visualize on https://erd.surge.sh
+# or https://quick-erd.surge.sh
+#
+# Relationship Types
+#  -    - one to one
+#  -<   - one to many
+#  >-   - many to one
+#  >-<  - many to many
+#  -0   - one to zero or one
+#  0-   - zero or one to one
+#  0-0  - zero or one to zero or one
+#  -0<  - one to zero or many
+#  >0-  - zero or many to one
+#
+////////////////////////////////////
+
+
+memo
+----
+user_id integer FK >- user.id
+created_at timestamp NULL
+updated_at timestamp NULL
+id integer PK
+image string NULL
+content text
+color string NULL
+
+
+memo_history
+------------
+id integer PK
+memo_id integer FK >- memo.id
+created_at timestamp NULL
+content text
+
+
+user
+----
+id integer PK
+created_at timestamp NULL
+updated_at timestamp NULL
+is_admin boolean
+avatar string NULL
+email string NULL
+ban_reason string NULL
+password_hash character NULL

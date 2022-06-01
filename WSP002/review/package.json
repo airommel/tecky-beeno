@@ -1,0 +1,22 @@
+{
+  "name": "review",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "ex1": "tsc && node ex1.js",
+    "ex2": "tsc && node ex2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0"
+  }
+}

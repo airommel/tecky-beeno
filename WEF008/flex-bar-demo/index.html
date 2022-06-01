@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      .container {
+        background-color: black;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background-color: hotpink;
+        padding: 1em;
+      }
+      main {
+        /* background-color: maroon; */
+        /* background-color: white; */
+        background-color: forestgreen;
+        flex-grow: 1;
+      }
+      canvas {
+        background-color: white;
+        /* width: 100%;
+        height: 100%; */
+      }
+      footer {
+        background-color: forestgreen;
+        padding: 1em;
+        padding-top: calc(1em - 4px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>game of life</header>
+      <main>
+        <canvas></canvas>
+      </main>
+      <footer>buttons</footer>
+    </div>
+    <script>
+      let main = document.querySelector('main')
+      let canvas = document.querySelector('main canvas')
+
+      function calcSize() {
+        let rect = main.getBoundingClientRect()
+        canvas.width = rect.width
+        canvas.height = rect.height
+      }
+
+      calcSize()
+      window.addEventListener('resize', () => {
+        canvas.width = 1
+        canvas.height = 1
+        calcSize()
+      })
+    </script>
+  </body>
+</html>

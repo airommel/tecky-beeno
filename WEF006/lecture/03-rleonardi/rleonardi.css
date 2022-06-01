@@ -1,0 +1,25 @@
+body {
+  overflow-x: hidden;
+}
+
+.scroll-container {
+  height: 28418px;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+main * {
+  position: fixed;
+}
+
+#debug {
+  position: fixed;
+  top: 0;
+  left: 0;
+}

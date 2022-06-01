@@ -1,0 +1,24 @@
+{
+  "name": "algo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc --noEmit",
+    "build": "tsc -p ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "ts-node": "^10.6.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "nodeplotlib": "^1.0.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.5"
+  }
+}

@@ -1,0 +1,7 @@
+todo_item
+---------
+id pk
+title varchar(50)
+desc varchar(2000)
+is_done boolean
+count integer

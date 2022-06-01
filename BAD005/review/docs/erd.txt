@@ -1,0 +1,37 @@
+# Visualize on https://erd.surge.sh
+# or https://quick-erd.surge.sh
+#
+# Relationship Types
+#  -    - one to one
+#  -<   - one to many
+#  >-   - many to one
+#  >-<  - many to many
+#  -0   - one to zero or one
+#  0-   - zero or one to one
+#  0-0  - zero or one to zero or one
+#  -0<  - one to zero or many
+#  >0-  - zero or many to one
+#
+////////////////////////////////////
+
+
+site
+----
+id integer PK
+domain text
+
+
+topic
+-----
+id integer PK
+site_id integer FK >- site.id
+like_count integer
+user_id integer FK >- user.id
+thread_id text
+title text
+
+
+user
+----
+id integer PK
+username text

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.1/font/bootstrap-icons.min.css"
+      integrity="sha512-WYaDo1TDjuW+MPatvDarHSfuhFAflHxD87U9RoB4/CSFh24/jzUHfirvuvwGmJq0U7S9ohBXy4Tfmk2UKkp2gA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css"
+      integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="row card-inner-padding-top">
+        <i class="bi bi-caret-down-fill gray"></i>
+
+        <span class="gray difficulty-level">Medium</span>
+
+        <i class="bi bi-share-fill blue share-button"></i>
+      </div>
+      <div class="row flex-center scores card-inner-padding-middle">
+        <div class="score-bar">
+          <i class="fas fa-times"></i>
+          <span class="gray score">-</span>
+        </div>
+        <div class="score-bar">
+          <i class="far fa-circle"></i>
+          <span class="gray score">-</span>
+        </div>
+      </div>
+      <div class="row flex-center current-turn card-inner-padding-middle">
+        <i class="fas fa-times"></i> <span color="gray">Turn</span>
+      </div>
+      <div class="row flex-center game-board-container">
+        <div class="game-board"></div>
+      </div>
+      <div class="row restart-button flex-center">restart game</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

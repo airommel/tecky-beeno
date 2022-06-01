@@ -1,0 +1,15 @@
+.room {
+  border-radius: 1em;
+  border: 1px solid black;
+  padding: 0.5em;
+	margin: 0.5em;
+	display: inline-block;
+}
+
+.guest .join-only{
+  display: none;
+}
+
+.joint .guest-only{
+  display: none;
+}

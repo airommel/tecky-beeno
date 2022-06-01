@@ -1,0 +1,6 @@
+request_log
+-----------
+id pk
+method varchar(6)
+url varchar(2048)
+user_agent varchar(255) null
